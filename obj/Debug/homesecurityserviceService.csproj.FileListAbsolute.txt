@@ -148,3 +148,6 @@ C:\Users\Robbie\Downloads\homesecurityserviceService\bin\zh-Hant\System.Spatial.
 C:\Users\Robbie\Downloads\homesecurityserviceService\obj\Debug\homesecurityserviceService.csprojResolveAssemblyReference.cache
 C:\Users\Robbie\Downloads\homesecurityserviceService\obj\Debug\homesecurityserviceService.dll
 C:\Users\Robbie\Downloads\homesecurityserviceService\obj\Debug\homesecurityserviceService.pdb
+C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\obj\Debug\homesecurityserviceService.csprojResolveAssemblyReference.cache
+C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\obj\Debug\homesecurityserviceService.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\obj\Debug\homesecurityserviceService.pdb

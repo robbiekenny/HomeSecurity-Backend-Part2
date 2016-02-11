@@ -3,7 +3,6 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Tables;
-using homesecurityserviceService.DataObjects;
 
 namespace homesecurityserviceService.Models
 {
@@ -22,7 +21,7 @@ namespace homesecurityserviceService.Models
         {
         } 
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+        //public DbSet<TodoItem> TodoItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -169,17 +169,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DataObjects\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\SendEmailController.cs" />
-    <Compile Include="Controllers\TodoItemController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\homesecurityserviceContext.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UploadFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
