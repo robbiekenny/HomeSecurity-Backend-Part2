@@ -27,17 +27,18 @@ namespace homesecurityserviceService.Controllers
         }
 
         // POST api/SendEmail
+        [HttpPost]
         public HttpResponseMessage Post([FromBody]string image,string email)
         {
             var message = "Sent";
 
             try
             {
-                SendPhoto(UploadImage(image),email);
+                SendPhoto(UploadImage(image), email);
             }
             catch (Exception e)
             {
-                
+
                 message = e.Message + "," + e.StackTrace + "," + e.Source;
                 return this.Request.CreateResponse(HttpStatusCode.BadRequest, new { message });
             }
@@ -47,6 +48,7 @@ namespace homesecurityserviceService.Controllers
 
         public string UploadImage(string encodedImage)
         {
+			//https://azure.microsoft.com/en-in/documentation/articles/storage-dotnet-shared-access-signature-part-2/
             // Retrieve storage account from connection string.
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 "**");
@@ -90,7 +92,7 @@ namespace homesecurityserviceService.Controllers
             return blockBlob.StorageUri.PrimaryUri.AbsoluteUri;
         }
 
-        public static IRestResponse SendPhoto(string imageUrl,string email)
+        private void SendPhoto(string imageUrl,string email)
         {
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
@@ -108,12 +110,8 @@ namespace homesecurityserviceService.Controllers
             "has triggered the motion detection system." +
              "<img src=\"" + imageUrl + "\">" + "</html>");
 
-            //request.AddFile("attachment", Path.Combine("files", "test.jpg"));
-            //request.AddFile("attatchment", ms.ToArray(), "test.jpg");
-
-
             request.Method = Method.POST;
-            return client.Execute(request);
+            client.Execute(request);
         }
     }
 }
