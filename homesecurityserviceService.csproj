@@ -146,6 +146,10 @@
       <HintPath>..\packages\WindowsAzure.Storage.6.2.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="OpenTok, Version=2.3.5599.34963, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTok.2.3.0\lib\net35\OpenTok.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -155,6 +159,7 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Http">
       <SpecificVersion>False</SpecificVersion>
@@ -224,8 +229,11 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\SendEmailController.cs" />
+    <Compile Include="Controllers\StreamingController.cs" />
     <Compile Include="Controllers\UploadVideoController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Models\homesecurityserviceContext.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

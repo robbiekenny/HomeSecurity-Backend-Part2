@@ -316,3 +316,5 @@ C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\bin\Microsoft.Practi
 C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\bin\Microsoft.Azure.KeyVault.Core.dll
 C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\bin\Microsoft.Azure.KeyVault.Core.xml
 C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\bin\Microsoft.WindowsAzure.Storage.pdb
+C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\bin\OpenTok.dll
+C:\Users\Robbie\Documents\GitHub\homesecurityserviceService\bin\OpenTok.xml

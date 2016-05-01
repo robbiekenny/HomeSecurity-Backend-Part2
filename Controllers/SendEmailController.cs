@@ -14,6 +14,8 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using System.Configuration;
 using System.IO;
 
+/*USERS PHOTO IS UPLOADED TO A BLOB AND THE URL OF THAT BLOB IS SENT TO THE USER IN AN EMAIL*/
+
 namespace homesecurityserviceService.Controllers
 {
     [MobileAppController]
@@ -27,8 +29,9 @@ namespace homesecurityserviceService.Controllers
         }
 
         // POST api/SendEmail
+        /*Photo is recieved in this controller and is processed to be sent to the user as an email*/
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]string image,string email)
+        public HttpResponseMessage Post([FromBody]string image,string email) //image is encoded as a base64 string
         {
             var message = "Sent";
 
@@ -46,12 +49,11 @@ namespace homesecurityserviceService.Controllers
             return this.Request.CreateResponse(HttpStatusCode.Created, new { message });
         }
 
-        public string UploadImage(string encodedImage)
+        private string UploadImage(string encodedImage)
         {
-			//https://azure.microsoft.com/en-in/documentation/articles/storage-dotnet-shared-access-signature-part-2/
             // Retrieve storage account from connection string.
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                "**");
+                "DefaultEndpointsProtocol=https;AccountName=homesecurityblob;AccountKey=zWaF1lN2ghNiDH2JKZvpE6qo6kE5fnEROGCWwy38+m3Z+7a2ljNAbpz+FYl/5mgkUvcLlE7QGZ/XYLR/rHhGwg==");
             //Sensitive information was replaced with ** from the above string for protection
 
             // Create the blob client.
@@ -87,7 +89,7 @@ namespace homesecurityserviceService.Controllers
             return blockBlob.Uri + sasBlobToken;
         }
 
-        public string getImageURL()
+        private string getImageURL()
         {
             return blockBlob.StorageUri.PrimaryUri.AbsoluteUri;
         }
@@ -98,10 +100,10 @@ namespace homesecurityserviceService.Controllers
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =
                     new HttpBasicAuthenticator("api",
-                                               "**");
+                                               "key-7849f01c422d48638073c526a5b69ee1");
             RestRequest request = new RestRequest();
             request.AddParameter("domain",
-                                 "**", ParameterType.UrlSegment);
+                                 "sandbox09debf1633754ea39b8f70e8c5dc3a35.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", "Home Security <homesecurity@security.ie>");
             request.AddParameter("to", email);
