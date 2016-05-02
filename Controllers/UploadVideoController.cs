@@ -63,10 +63,10 @@ Environment.SpecialFolder.ApplicationData), Path.GetFileName(file.FileName));
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =
                     new HttpBasicAuthenticator("api",
-                                               "key-7849f01c422d48638073c526a5b69ee1");
+                                               "");
             RestRequest request = new RestRequest();
             request.AddParameter("domain",
-                                 "sandbox09debf1633754ea39b8f70e8c5dc3a35.mailgun.org", ParameterType.UrlSegment);
+                                 "", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", "Home Security <homesecurity@security.ie>");
             request.AddParameter("to", email);
@@ -84,7 +84,7 @@ Environment.SpecialFolder.ApplicationData), Path.GetFileName(file.FileName));
             homesecurityserviceContext db_context = new homesecurityserviceContext();
 
             //upload the video as an asset to AMS using the path where the video has been stored 
-            var context = new CloudMediaContext("homesecurityvideos", "QlhTa7teDvWmf0+fGZPBcW033ZyUu6pSB1suBFayF7I=");
+            var context = new CloudMediaContext("", "");
             var uploadAsset = context.Assets.Create(Path.GetFileName(fileName), AssetCreationOptions.None);
             var assetFile = uploadAsset.AssetFiles.Create(Path.GetFileName(fileName));
             assetFile.Upload(path);

@@ -53,7 +53,7 @@ namespace homesecurityserviceService.Controllers
         {
             // Retrieve storage account from connection string.
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                "DefaultEndpointsProtocol=https;AccountName=homesecurityblob;AccountKey=zWaF1lN2ghNiDH2JKZvpE6qo6kE5fnEROGCWwy38+m3Z+7a2ljNAbpz+FYl/5mgkUvcLlE7QGZ/XYLR/rHhGwg==");
+                "");
             //Sensitive information was replaced with ** from the above string for protection
 
             // Create the blob client.
@@ -100,10 +100,10 @@ namespace homesecurityserviceService.Controllers
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =
                     new HttpBasicAuthenticator("api",
-                                               "key-7849f01c422d48638073c526a5b69ee1");
+                                               "");
             RestRequest request = new RestRequest();
             request.AddParameter("domain",
-                                 "sandbox09debf1633754ea39b8f70e8c5dc3a35.mailgun.org", ParameterType.UrlSegment);
+                                 "", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
             request.AddParameter("from", "Home Security <homesecurity@security.ie>");
             request.AddParameter("to", email);

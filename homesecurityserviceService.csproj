@@ -229,7 +229,6 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\SendEmailController.cs" />
-    <Compile Include="Controllers\StreamingController.cs" />
     <Compile Include="Controllers\UploadVideoController.cs" />
     <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Models\homesecurityserviceContext.cs" />
